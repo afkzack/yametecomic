@@ -1,0 +1,90 @@
+ 
+ ​{% load  static %} 
+ ​<!DOCTYPE html​> 
+ ​<​html​> 
+ ​<​head​> 
+ ​<​meta​ ​name​="​viewport​" ​content​="​width=device-width, initial-scale=1​"​> 
+ ​<​style​> 
+ ​*​ { 
+ ​  ​box-sizing​:​ border-box; 
+ ​} 
+  
+ ​/* Add a gray background color with some padding */ 
+ ​body​ { 
+ ​  ​font-family​:​ Arial; 
+ ​  ​padding​:​ ​20​px​; 
+ ​  ​background​:​ ​#​f1f1f1​; 
+ ​} 
+  
+ ​/* Header/Blog Title */ 
+ ​.​header​ { 
+ ​  ​padding​:​ ​30​px​; 
+ ​  ​font-size​:​ ​40​px​; 
+ ​  ​text-align​:​ center; 
+ ​  ​background​:​ white; 
+ ​} 
+  
+ ​/* Create two unequal columns that floats next to each other */ 
+ ​/* Left column */ 
+ ​.​leftcolumn​ {    
+ ​  ​float​:​ left; 
+ ​  ​width​:​ ​75​%​; 
+ ​} 
+  
+ ​/* Right column */ 
+ ​.​rightcolumn​ { 
+ ​  ​float​:​ left; 
+ ​  ​width​:​ ​25​%​; 
+ ​  ​padding-left​:​ ​20​px​; 
+ ​} 
+  
+ ​/* Fake image */ 
+ ​.​fakeimg​ { 
+ ​  ​background-color​:​ ​#​aaa​; 
+ ​  ​width​:​ ​100​%​; 
+ ​  ​padding​:​ ​20​px​; 
+ ​} 
+  
+ ​/* Add a card effect for articles */ 
+ ​.​card​ { 
+ ​   ​background-color​:​ white; 
+ ​   ​padding​:​ ​20​px​; 
+ ​   ​margin-top​:​ ​20​px​; 
+ ​} 
+  
+ ​/* Clear floats after the columns */ 
+ ​.​row​:​after​ { 
+ ​  ​content​:​ ​""​; 
+ ​  ​display​:​ table; 
+ ​  ​clear​:​ both; 
+ ​} 
+  
+ ​/* Footer */ 
+ ​.​footer​ { 
+ ​  ​padding​:​ ​20​px​; 
+ ​  ​text-align​:​ center; 
+ ​  ​background​:​ ​#​ddd​; 
+ ​  ​margin-top​:​ ​20​px​; 
+ ​} 
+  
+ ​/* Responsive layout - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other */ 
+ ​@media​ screen ​and​ (​max-width​:​ ​800​px​) { 
+ ​  .​leftcolumn​,​ .​rightcolumn​ {    
+ ​    ​width​:​ ​100​%​; 
+ ​    ​padding​:​ ​0​; 
+ ​  } 
+ ​} 
+ ​</​style​> 
+ ​</​head​> 
+ ​<​body​> 
+  
+ ​<​div​ ​class​="​header​"​> 
+ ​  ​<​h2​>​Blog Name​</​h2​> 
+ ​</​div​>
+{% if read_list %}
+{% for plist in read_list %}
+<div class='card' style='border-style:groove;border-color:#ffffff;width:320px;height:210px;background-color:transparent;padding:2px;'><img src="/static{plist.image.url}}" style="width:180px;height:130px;"><p>{{plist.title}}</p>
+</div>
+
+</body>
+</html>
